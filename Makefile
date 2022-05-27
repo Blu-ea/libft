@@ -6,14 +6,12 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/03/02 19:10:54 by amiguez          ###   ########.fr        #
+#    Updated: 2022/05/28 00:48:30 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
-
-# /////////////////////////////////
-
+# **************************************************************************** #
 LST_SRCS := ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
@@ -64,27 +62,15 @@ LST_SRCS := ft_atoi.c\
 			ft_printf.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 LST_INCS :=	libft.h
-
-# /////////////////////////////////
-
-DIR_SRCS :=	srcs
-DIR_OBJS :=	.objs
-DIR_INCS :=	.
-
-# /////////////////////////////////
-
-SRCS	:=	$(addprefix $(DIR_SRCS)/,$(LST_SRCS))
-OBJS	:=	$(addprefix $(DIR_OBJS)/,$(LST_OBJS))
-INCS	:=	$(addprefix $(DIR_INCS)/,$(LST_INCS))
-
-# /////////////////////////////////
-
-CC		:= gcc
-CFLAGS	:= -Wall -Werror -Wextra
-AR		:= ar rcs
-
-# /////////////////////////////////
-
+# **************************************************************************** #
+DIR_SRC :=	srcs
+DIR_OBJ :=	.objs
+DIR_INC :=	.
+# **************************************************************************** #
+SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS))
+OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS))
+INCS	:=	$(addprefix $(DIR_INC)/,$(LST_INCS))
+# **************************************************************************** #
 ERASE	=	\033[2K\r
 GREY	=	\033[30m
 RED		=	\033[31m
@@ -98,11 +84,14 @@ BOLD	=	\033[1m
 UNDER	=	\033[4m
 SUR		=	\033[7m
 END		=	\033[0m
-
+# **************************************************************************** #
 NORMITEST = 
 NORMINETTE = $(shell norminette $(SRCS) | grep -i 'Error')
-
-
+# **************************************************************************** #
+# /////////////////////////////////
+CC		:= gcc
+CFLAGS	:= -Wall -Werror -Wextra
+AR		:= ar rcs
 # /////////////////////////////////
 
 all: $(NAME)
@@ -117,23 +106,25 @@ else
 	printf "$(RED)$(SUR)THERE IS AN ERROR WITH NORMINETTE IN LIBFT FILES !!$(END)\n"
 endif
 
-$(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
-	$(CC) $(CFLAGS) -I $(DIR_INCS) -c $< -o $@
-	printf "$(ERASE)Compiling libft : $(BLUE) $<$(END)"
+$(DIR_OBJ)/%.o: $(DIR_SRC)/%.c $(INCS) Makefile | $(DIR_OBJ)
+	$(CC) $(CFLAGS) -I $(DIR_INC) -c $< -o $@
+	printf "$(ERASE)Compiling $(NAME) : $(BLUE) $<$(END)"
 
-$(DIR_OBJS):
-	mkdir -p $(DIR_OBJS)
+$(DIR_OBJ):
+	mkdir -p $(DIR_OBJ)
 
 # /////////////////////////////////
 
 clean	:
-	rm -rf $(DIR_OBJS)
+	rm -rf $(DIR_OBJ)
 	printf "$(CYAN) /!\ $(END)Erasing .o in libft$(CYAN) /!\ \n$(END)"
 
 fclean	: clean
 	rm -rf $(NAME)
 	printf "$(RED) /!\ $(END)Erasing libft.a$(RED) /!\ \n$(END)"
 re		: fclean all
+
+# /////////////////////////////////
 
 .PHONY	: all clean fclean re 
 .SILENT	:
