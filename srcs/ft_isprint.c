@@ -6,12 +6,18 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:05:01 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/04 17:34:20 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
+/**
+ * @brief return 1 if c is a printable character, 0 otherwise
+ * 
+ * @param c 
+ * @return int 
+ */
 int	ft_isprint(int c)
 {
 	if (c <= 126 && c >= 32)
