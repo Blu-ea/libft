@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:39:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/04 17:14:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/04 17:56:15 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,24 @@ int	ft_isdigit(int c)
 		return (1);
 	else
 		return (0);
+}
+
+/**
+ * @brief return 0 if all digit, 1 if not
+ * 
+ * @param arg 
+ * @return int 
+ */
+int	ft_is_all_digit(char *arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg[i])
+	{
+		if (!ft_isdigit(arg[i]) && !(arg[i] == '-' && i == 0))
+			return (0);
+		i++;
+	}
+	return (1);
 }

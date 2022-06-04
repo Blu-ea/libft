@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/03/02 18:55:02 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/04 17:56:14 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
+int		ft_is_all_digit(char *arg);
 int		ft_isprint(int c);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
