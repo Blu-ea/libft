@@ -6,12 +6,20 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 01:35:38 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:58:37 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Iterate over a string and apply a function to each character
+ * and return a new string. (maloced)
+ * 
+ * @param str the string to iterate.
+ * @param f the function to apply.
+ * @return A pointer ot the new string or NULL if an error occured.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	len_s;

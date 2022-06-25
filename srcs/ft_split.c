@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 23:31:37 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 18:34:05 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:53:22 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,3 @@ static int	ft_wordcount(char *str, char *charset)
 	}
 	return (j);
 }
-

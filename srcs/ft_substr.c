@@ -6,12 +6,20 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:44:55 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 19:08:33 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Return a substring of a string.
+ * 
+ * @param s the string to cut.
+ * @param start the index of the first character to cut.
+ * @param len the length of the substring.
+ * @return the substring -- "" if the substring is out of bounds -- NULL if error
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret_str;

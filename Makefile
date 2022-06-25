@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/25 18:01:03 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 18:52:46 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,8 @@ DIR_MEM := mem
 DIR_PRINT := print
 DIR_CONV := conv
 # **************************************************************************** #
-LST_SRCS := ft_atoi.c\
-			ft_bzero.c\
+LST_SRCS :=	ft_bzero.c\
 			ft_calloc.c\
-			ft_itoa.c\
 			ft_split.c\
 			ft_strchr.c\
 			ft_strdup.c\
@@ -144,6 +142,7 @@ $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)/$(DIR_LST)
 	mkdir -p $(DIR_OBJ)/$(DIR_MEM)
 	mkdir -p $(DIR_OBJ)/$(DIR_PRINT)
+	mkdir -p $(DIR_OBJ)/$(DIR_CONV)
 
 # /////////////////////////////////
 

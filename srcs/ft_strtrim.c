@@ -6,13 +6,13 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:35:25 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 19:03:56 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long int	ft_start(char const *s1, char const *set)
+static unsigned long int	ft_start(char const *s1, char const *set)
 {
 	unsigned long int	i;
 	unsigned long int	j;
@@ -32,7 +32,7 @@ unsigned long int	ft_start(char const *s1, char const *set)
 	return (i);
 }
 
-unsigned long int	ft_end(char const *s1, char const *set)
+static unsigned long int	ft_end(char const *s1, char const *set)
 {
 	unsigned long int	i;
 	unsigned long int	j;
@@ -52,6 +52,12 @@ unsigned long int	ft_end(char const *s1, char const *set)
 	return (i);
 }
 
+/**
+ * @brief Remove the spaces at the start and end of a string.
+ * 
+ * @param s The string to trim.
+ * @return char* The trimmed string.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned long int	end;
