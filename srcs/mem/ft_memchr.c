@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 18:07:09 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/03 17:17:36 by amiguez           #+#    #+#             */
+/*   Updated: 2022/06/25 14:59:48 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+#include "libft.h"
+/**
+ * @brief Found the 1st occurence of the character c in the string s.
+ * 
+ * @param s String to search in.
+ * @param c The char to found
+ * @param n the numbers of bytes to search
+ * @return w pointer to c, NULL if not found.
+ */
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned long int	i;
-	unsigned char		*str1;
-	unsigned char		*str2;
+	unsigned char		*str;
 
-	str1 = (unsigned char *) s1;
-	str2 = (unsigned char *) s2;
+	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if ((unsigned char)c == *str)
+			return (str);
+		str++;
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

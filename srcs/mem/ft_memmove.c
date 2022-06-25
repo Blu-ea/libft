@@ -6,12 +6,20 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:06:51 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 15:23:34 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
+/**
+ * @brief Move dst to src in a non-destructive way.
+ * 
+ * @param dst the destination memory area.
+ * @param src the source memory area.
+ * @param len the lenght of the memory area.
+ * @return void *dst
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	long int	i;

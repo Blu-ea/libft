@@ -6,12 +6,20 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:38:52 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 15:28:07 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
+/**
+ * @brief Fill a memory area with n bytes of an unsigned char.
+ * 
+ * @param b Where to write
+ * @param c Unsigned char
+ * @param len The nb of bytes to write
+ * @return void* b
+ */
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char		filler;

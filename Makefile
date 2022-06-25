@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/25 15:13:12 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 16:06:55 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,18 +19,12 @@ DIR_INC :=	includes
 # **************************************************************************** #
 DIR_BOOL := bool
 DIR_LST := lst
-DIR_BOOL_SRC :=	$(addprefix $(DIR_SRC)/,$(DIR_BOOL))
-DIR_BOOL_OBJ :=	$(addprefix $(DIR_OBJ)/,$(DIR_BOOL))
+DIR_MEM := mem
 # **************************************************************************** #
 LST_SRCS := ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
 			ft_itoa.c\
-			ft_memchr.c\
-			ft_memcmp.c\
-			ft_memcpy.c\
-			ft_memmove.c\
-			ft_memset.c\
 			ft_putchar_fd.c\
 			ft_putendl_fd.c\
 			ft_putnbr_fd.c\
@@ -80,11 +74,19 @@ LST_LST :=	$(addprefix $(DIR_LST)/,$(LST))
 SRC_LST :=	$(addprefix $(DIR_SRC)/, $(LST_LST))
 OBJ_LST :=	$(addprefix $(DIR_OBJ)/,$(LST_LST:.c=.o))
 
+MEM		:=	ft_memchr.c\
+			ft_memcmp.c\
+			ft_memcpy.c\
+			ft_memmove.c\
+			ft_memset.c
+LST_MEM :=	$(addprefix $(DIR_MEM)/,$(MEM))
+SRC_MEM :=	$(addprefix $(DIR_SRC)/, $(LST_MEM))
+OBJ_MEM :=	$(addprefix $(DIR_OBJ)/,$(LST_MEM:.c=.o))
 # **************************************************************************** #
 LST_INCS :=	libft.h
 # **************************************************************************** #
-SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST)
-OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST)
+SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST) $(SRC_MEM)
+OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST) $(OBJ_MEM)
 INCS	:=	$(addprefix $(DIR_INC)/,$(LST_INCS))
 # **************************************************************************** #
 ERASE	=	\033[2K\r
@@ -130,6 +132,7 @@ $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)
 	mkdir -p $(DIR_OBJ)/$(DIR_BOOL)
 	mkdir -p $(DIR_OBJ)/$(DIR_LST)
+	mkdir -p $(DIR_OBJ)/$(DIR_MEM)
 
 # /////////////////////////////////
 
@@ -147,5 +150,5 @@ debug	:
 
 # /////////////////////////////////
 
-.PHONY	: all clean fclean re debug
-.SILENT	:
+.PHONY	: all clean fclean re debug $(DIR_OBJ)
+# .SILENT	:

@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/04 17:56:14 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 13:42:27 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ char	*ft_itoa(int n);
 void	*ft_calloc(size_t count, size_t size);
 
 int		ft_isalnum(int c);
+int		ft_isall_alphanum(char *arg);
 int		ft_isalpha(int c);
+int		ft_isall_alpha(char *arg);
 int		ft_isascii(int c);
+int		ft_isall_ascii(char *str);
 int		ft_isdigit(int c);
-int		ft_is_all_digit(char *arg);
+int		ft_isall_digit(char *arg);
 int		ft_isprint(int c);
+int		ft_isall_print(char *str);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
