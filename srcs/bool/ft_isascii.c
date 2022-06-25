@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 13:39:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/04 17:58:02 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/02 13:52:15 by amiguez           #+#    #+#             */
+/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 /**
- * @brief return 1 if c is a digit, 0 otherwise
+ * @brief return (1) if c is a ascii char, (0) otherwise
  * 
- * @param c 
- * @return int 
+ * @param c the char to test
+ * @return 0 or 1
  */
-int	ft_isdigit(int c)
+int	ft_isascii(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 /**
- * @brief return 0 if all digit, 1 if not
+ * @brief return (1) if all the char in str are ascii, (0) otherwise
  * 
- * @param arg 
+ * @param str 
  * @return int 
  */
-int	ft_is_all_digit(char *arg)
+int	ft_isall_ascii(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (arg[i])
+	while (str[i])
 	{
-		if (!ft_isdigit(arg[i]))
+		if (!ft_isascii(str[i]))
 			return (0);
 		i++;
 	}

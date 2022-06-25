@@ -1,30 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 02:50:43 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/02 13:39:05 by amiguez           #+#    #+#             */
+/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+/**
+ * @brief return 1 if c is a digit, 0 otherwise
+ * 
+ * @param c 
+ * @return int 
+ */
+int	ft_isdigit(int c)
 {
-	int		i;
-	t_list	*t;
-
-	if (!lst)
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
 		return (0);
+}
+
+/**
+ * @brief return 0 if all digit, 1 if not
+ * 
+ * @param arg 
+ * @return int 
+ */
+int	ft_isall_digit(char *arg)
+{
+	int	i;
+
 	i = 0;
-	t = lst;
-	while (t)
+	while (arg[i])
 	{
-		t = t->next;
+		if (!ft_isdigit(arg[i]))
+			return (0);
 		i++;
 	}
-	return (i);
+	return (1);
 }

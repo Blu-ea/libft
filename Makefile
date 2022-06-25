@@ -6,20 +6,25 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/05/29 07:04:45 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 14:52:13 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := libft.a
+
+# **************************************************************************** #
+DIR_SRC :=	srcs
+DIR_OBJ :=	.objs
+DIR_INC :=	includes
+# **************************************************************************** #
+DIR_BOOL := bool
+DIR_LST := lst
+DIR_BOOL_SRC :=	$(addprefix $(DIR_SRC)/,$(DIR_BOOL))
+DIR_BOOL_OBJ :=	$(addprefix $(DIR_OBJ)/,$(DIR_BOOL))
 # **************************************************************************** #
 LST_SRCS := ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
-			ft_isalnum.c\
-			ft_isalpha.c\
-			ft_isascii.c\
-			ft_isdigit.c\
-			ft_isprint.c\
 			ft_itoa.c\
 			ft_memchr.c\
 			ft_memcmp.c\
@@ -46,7 +51,23 @@ LST_SRCS := ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			ft_lstadd_front.c\
+			get_next_line_utils.c\
+			get_next_line.c\
+			ft_printf_p.c\
+			ft_printf_x.c\
+			ft_printf.c
+LST_OBJS :=	$(LST_SRCS:.c=.o)
+
+BOOL	:=	ft_isalnum.c\
+			ft_isalpha.c\
+			ft_isascii.c\
+			ft_isdigit.c\
+			ft_isprint.c
+LST_BOOL :=	$(addprefix $(DIR_BOOL)/,$(BOOL))
+SRC_BOOL := $(addprefix $(DIR_SRC)/, $(LST_BOOL))
+OBJ_BOOL :=	$(addprefix $(DIR_OBJ)/,$(LST_BOOL:.c=.o))
+
+LST		:=	ft_lstadd_front.c\
 			ft_lstadd_back.c\
 			ft_lstsize.c\
 			ft_lstlast.c\
@@ -54,21 +75,16 @@ LST_SRCS := ft_atoi.c\
 			ft_lstclear.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
-			ft_lstnew.c\
-			get_next_line_utils.c\
-			get_next_line.c\
-			ft_printf_p.c\
-			ft_printf_x.c\
-			ft_printf.c
-LST_OBJS :=	$(LST_SRCS:.c=.o)
+			ft_lstnew.c
+LST_LST :=	$(addprefix $(DIR_LST)/,$(LST))
+SRC_LST :=	$(addprefix $(DIR_SRC)/, $(LST_LST))
+OBJ_LST :=	$(addprefix $(DIR_OBJ)/,$(LST_LST:.c=.o))
+
+# **************************************************************************** #
 LST_INCS :=	libft.h
 # **************************************************************************** #
-DIR_SRC :=	srcs
-DIR_OBJ :=	.objs
-DIR_INC :=	includes
-# **************************************************************************** #
-SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS))
-OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS))
+SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST)
+OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST)
 INCS	:=	$(addprefix $(DIR_INC)/,$(LST_INCS))
 # **************************************************************************** #
 ERASE	=	\033[2K\r
@@ -107,11 +123,13 @@ else
 endif
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c $(INCS) Makefile | $(DIR_OBJ)
-	$(CC) $(CFLAGS) -I $(DIR_INC) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
 	printf "$(ERASE)Compiling $(NAME) : $(BLUE) $<$(END)"
 
 $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)
+	mkdir -p $(DIR_OBJ)/$(DIR_BOOL)
+	mkdir -p $(DIR_OBJ)/$(DIR_LST)
 
 # /////////////////////////////////
 
@@ -124,7 +142,10 @@ fclean	: clean
 	printf "$(RED) /!\ $(END)Erasing libft.a$(RED) /!\ \n$(END)"
 re		: fclean all
 
+debug	:
+	$(OBJS)
+
 # /////////////////////////////////
 
-.PHONY	: all clean fclean re 
-.SILENT	:
+.PHONY	: all clean fclean re debug
+# .SILENT	:

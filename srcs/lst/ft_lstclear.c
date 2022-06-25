@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 03:22:32 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/10 04:29:05 by amiguez           #+#    #+#             */
+/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*last;
+	t_list	*point;
+	t_list	*point2;
 
-	last = ft_lstlast(*alst);
-	if (!*alst)
-		*alst = new;
-	else
-		last -> next = new;
+	if (!lst || !del)
+		return ;
+	point = *lst;
+	point2 = *lst;
+	while (point)
+	{
+		point2 = point2 -> next;
+		del (point -> content);
+		free (point);
+		point = point2;
+	}
+	*lst = NULL;
 }

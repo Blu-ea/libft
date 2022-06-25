@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 04:29:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Created: 2021/11/10 02:50:43 by amiguez           #+#    #+#             */
+/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*point;
-	t_list	*point2;
+	int		i;
+	t_list	*t;
 
-	if (!lst || !del)
-		return ;
-	point = *lst;
-	point2 = *lst;
-	while (point)
+	if (!lst)
+		return (0);
+	i = 0;
+	t = lst;
+	while (t)
 	{
-		point2 = point2 -> next;
-		del (point -> content);
-		free (point);
-		point = point2;
+		t = t->next;
+		i++;
 	}
-	*lst = NULL;
+	return (i);
 }
