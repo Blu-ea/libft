@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 13:42:27 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 17:46:47 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <unistd.h> // write et read
 # include <limits.h> // OPEN_MAX
 # include <stdarg.h>
+# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
+# define BASE_HEXA_LOW "0123456789abcdef"
+# define BASE_HEXA_UP "0123456789ABCDEF"
+# define UP 1
+# define LOW 0
 
 typedef struct s_list
 {
@@ -66,10 +76,12 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_printf(const char *s, ...);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putendl_fd(char *s, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_put_unnbr_fd(unsigned int n, int fd);
 
 void	ft_lstadd_front(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -81,34 +93,6 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-//########  Printf  #######//
-
-int		ft_printf(const char *s, ...);
-int		ft_trie(va_list ap, char type);
-int		ft_printchar(char format, char type);
-int		ft_printstr(char *ap);
-int		ft_printnbr(long long int n);
-int		ft_convertbase_x(unsigned int nb, char *base);
-int		ft_convertbase_p(unsigned long long int nb, char *base);
-void	ft_fill_str_x(char *nb_hex, unsigned int nb_int, char *base, int i);
-void	ft_fill_str_p(char *nb_hex, unsigned long long int nb_int,
-			char *base, int i);
-int		ft_calcsize_x(unsigned int nb);
-int		ft_calcsize_p(unsigned long long int nb);
-
-//#########  GNL  ##########//
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 0
-# endif
-
 char	*get_next_line(int fd);
-int		chek_nl(char *line);
-int		ft_strlen(const char *str);
-char	*ft_strdup(const char *src);
-char	*ret_nl(char *lni, int i);
-void	set_nl(char *line, char stat[BUFFER_SIZE + 1]);
-
-//#######################
 
 #endif

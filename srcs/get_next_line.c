@@ -6,11 +6,15 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:31:06 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 17:46:47 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
+
+static int	chek_nl(char *line);
+static void	set_nl(char *line, char *stat);
+static char	*ret_nl(char *ln, int i);
 
 char	*get_next_line(int fd)
 {
@@ -41,7 +45,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int	chek_nl(char *line)
+static int	chek_nl(char *line)
 {
 	int	i;
 
@@ -57,7 +61,7 @@ int	chek_nl(char *line)
 	return (-1);
 }
 
-void	set_nl(char *line, char *stat)
+static void	set_nl(char *line, char *stat)
 {
 	char	*temp;
 	int		i;
@@ -72,4 +76,14 @@ void	set_nl(char *line, char *stat)
 	}
 	stat[i] = 0;
 	free (temp);
+}
+
+static char	*ret_nl(char *ln, int i)
+{
+	if (i == -1)
+	{
+		free (ln);
+		return (NULL);
+	}
+	return (ln);
 }

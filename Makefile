@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/25 16:06:55 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 17:51:46 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,12 @@ DIR_INC :=	includes
 DIR_BOOL := bool
 DIR_LST := lst
 DIR_MEM := mem
+DIR_PRINT := print
 # **************************************************************************** #
 LST_SRCS := ft_atoi.c\
 			ft_bzero.c\
 			ft_calloc.c\
 			ft_itoa.c\
-			ft_putchar_fd.c\
-			ft_putendl_fd.c\
-			ft_putnbr_fd.c\
-			ft_putstr_fd.c\
 			ft_split.c\
 			ft_strchr.c\
 			ft_strdup.c\
@@ -45,11 +42,7 @@ LST_SRCS := ft_atoi.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			get_next_line_utils.c\
-			get_next_line.c\
-			ft_printf_p.c\
-			ft_printf_x.c\
-			ft_printf.c
+			get_next_line.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 
 BOOL	:=	ft_isalnum.c\
@@ -82,11 +75,21 @@ MEM		:=	ft_memchr.c\
 LST_MEM :=	$(addprefix $(DIR_MEM)/,$(MEM))
 SRC_MEM :=	$(addprefix $(DIR_SRC)/, $(LST_MEM))
 OBJ_MEM :=	$(addprefix $(DIR_OBJ)/,$(LST_MEM:.c=.o))
+
+PRINT :=	ft_putchar_fd.c\
+			ft_putendl_fd.c\
+			ft_putnbr_fd.c\
+			ft_putstr_fd.c\
+			ft_put_unnbr_fd.c\
+			ft_printf.c
+LST_PRINT :=	$(addprefix $(DIR_PRINT)/,$(PRINT))
+SRC_PIRNT :=	$(addprefix $(DIR_SRC)/, $(LST_PRINT))
+OBJ_PRINT :=	$(addprefix $(DIR_OBJ)/,$(LST_PRINT:.c=.o))
 # **************************************************************************** #
 LST_INCS :=	libft.h
 # **************************************************************************** #
-SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST) $(SRC_MEM)
-OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST) $(OBJ_MEM)
+SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST) $(SRC_MEM) $(SRC_PRINT)
+OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST) $(OBJ_MEM) $(OBJ_PRINT)
 INCS	:=	$(addprefix $(DIR_INC)/,$(LST_INCS))
 # **************************************************************************** #
 ERASE	=	\033[2K\r
@@ -133,6 +136,7 @@ $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)/$(DIR_BOOL)
 	mkdir -p $(DIR_OBJ)/$(DIR_LST)
 	mkdir -p $(DIR_OBJ)/$(DIR_MEM)
+	mkdir -p $(DIR_OBJ)/$(DIR_PRINT)
 
 # /////////////////////////////////
 
@@ -151,4 +155,4 @@ debug	:
 # /////////////////////////////////
 
 .PHONY	: all clean fclean re debug $(DIR_OBJ)
-# .SILENT	:
+.SILENT	:

@@ -6,12 +6,19 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:44:26 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 14:52:45 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
+/**
+ * @brief recreation of the atoi function ---
+ * Take one int in char and return it in int
+ * 
+ * @param str The int in char*
+ * @return The int contend in str
+ */
 int	ft_atoi(const char *str)
 {
 	int			i;

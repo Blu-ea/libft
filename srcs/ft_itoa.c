@@ -6,13 +6,13 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 23:37:53 by amiguez           #+#    #+#             */
-/*   Updated: 2022/05/29 07:03:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 14:48:09 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int	ft_count_nb(long int n)
+static int	ft_count_nb(long int n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	ft_count_nb(long int n)
 	return (i);
 }
 
-void	ft_add_minus(char *ret, int size)
+static void	ft_add_minus(char *ret, int size)
 {
 	int		i;
 	char	swap;
@@ -44,7 +44,7 @@ void	ft_add_minus(char *ret, int size)
 	ret[i] = swap;
 }
 
-void	ft_fill(int long k, int num_in_n, char *str_n)
+static void	ft_fill(int long k, int num_in_n, char *str_n)
 {
 	while (num_in_n)
 	{
@@ -54,6 +54,12 @@ void	ft_fill(int long k, int num_in_n, char *str_n)
 	}
 }
 
+/**
+ * @brief Return a Malloced char* version of the int
+ * 
+ * @param n The int to convert
+ * @return n in char* or NULL if error
+ */
 char	*ft_itoa(int n)
 {
 	char		*str_n;
