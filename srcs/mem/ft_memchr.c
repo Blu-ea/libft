@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:17:36 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:59:48 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/25 18:08:20 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * @param s String to search in.
  * @param c The char to found
  * @param n the numbers of bytes to search
- * @return w pointer to c, NULL if not found.
+ * @return pointer to c, NULL if not found.
  */
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/25 17:51:46 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 18:01:03 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ DIR_BOOL := bool
 DIR_LST := lst
 DIR_MEM := mem
 DIR_PRINT := print
+DIR_CONV := conv
 # **************************************************************************** #
 LST_SRCS := ft_atoi.c\
 			ft_bzero.c\
@@ -85,11 +86,17 @@ PRINT :=	ft_putchar_fd.c\
 LST_PRINT :=	$(addprefix $(DIR_PRINT)/,$(PRINT))
 SRC_PIRNT :=	$(addprefix $(DIR_SRC)/, $(LST_PRINT))
 OBJ_PRINT :=	$(addprefix $(DIR_OBJ)/,$(LST_PRINT:.c=.o))
+
+CONV	:=	ft_atoi.c\
+			ft_itoa.c
+LST_CONV :=	$(addprefix $(DIR_CONV)/,$(CONV))
+SRC_CONV :=	$(addprefix $(DIR_SRC)/, $(LST_CONV))
+OBJ_CONV :=	$(addprefix $(DIR_OBJ)/,$(LST_CONV:.c=.o))
 # **************************************************************************** #
 LST_INCS :=	libft.h
 # **************************************************************************** #
-SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST) $(SRC_MEM) $(SRC_PRINT)
-OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST) $(OBJ_MEM) $(OBJ_PRINT)
+SRCS	:=	$(addprefix $(DIR_SRC)/,$(LST_SRCS)) $(SRC_BOOL) $(SRC_LST) $(SRC_MEM) $(SRC_PRINT) $(SRC_CONV)
+OBJS	:=	$(addprefix $(DIR_OBJ)/,$(LST_OBJS)) $(OBJ_BOOL) $(OBJ_LST) $(OBJ_MEM) $(OBJ_PRINT) $(OBJ_CONV)
 INCS	:=	$(addprefix $(DIR_INC)/,$(LST_INCS))
 # **************************************************************************** #
 ERASE	=	\033[2K\r
