@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/25 14:52:13 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/25 15:13:12 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -148,4 +148,4 @@ debug	:
 # /////////////////////////////////
 
 .PHONY	: all clean fclean re debug
-# .SILENT	:
+.SILENT	:
