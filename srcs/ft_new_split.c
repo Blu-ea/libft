@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 00:44:49 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/30 01:01:52 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static char	*get_word(char *line, char c);
 /**
  * @brief the same as a split Except it ignore the charset inside quotes.
  * 
- * @param line 
- * @param c 
+ * @param line The line to split
+ * @param c The char to split
  * @return Return a char** of the words(+1 for the \0) or NULL if error.
  */
 char	**ft_split_quotes(char *line, char c)

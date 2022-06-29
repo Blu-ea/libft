@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/30 00:37:23 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/30 01:01:36 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ BOOL	:=	ft_isalnum.c\
 			ft_isdigit.c\
 			ft_isprint.c
 LST_BOOL :=	$(addprefix $(DIR_BOOL)/,$(BOOL))
-SRC_BOOL := $(addprefix $(DIR_SRC)/, $(LST_BOOL))
+SRC_BOOL := $(addprefix $(DIR_SRC)/,$(LST_BOOL))
 OBJ_BOOL :=	$(addprefix $(DIR_OBJ)/,$(LST_BOOL:.c=.o))
 
 LST		:=	ft_lstadd_front.c\
@@ -64,7 +64,7 @@ LST		:=	ft_lstadd_front.c\
 			ft_lstmap.c\
 			ft_lstnew.c
 LST_LST :=	$(addprefix $(DIR_LST)/,$(LST))
-SRC_LST :=	$(addprefix $(DIR_SRC)/, $(LST_LST))
+SRC_LST :=	$(addprefix $(DIR_SRC)/,$(LST_LST))
 OBJ_LST :=	$(addprefix $(DIR_OBJ)/,$(LST_LST:.c=.o))
 
 MEM		:=	ft_memchr.c\
@@ -73,7 +73,7 @@ MEM		:=	ft_memchr.c\
 			ft_memmove.c\
 			ft_memset.c
 LST_MEM :=	$(addprefix $(DIR_MEM)/,$(MEM))
-SRC_MEM :=	$(addprefix $(DIR_SRC)/, $(LST_MEM))
+SRC_MEM :=	$(addprefix $(DIR_SRC)/,$(LST_MEM))
 OBJ_MEM :=	$(addprefix $(DIR_OBJ)/,$(LST_MEM:.c=.o))
 
 PRINT :=	ft_putchar_fd.c\
@@ -83,13 +83,13 @@ PRINT :=	ft_putchar_fd.c\
 			ft_put_unnbr_fd.c\
 			ft_printf.c
 LST_PRINT :=	$(addprefix $(DIR_PRINT)/,$(PRINT))
-SRC_PIRNT :=	$(addprefix $(DIR_SRC)/, $(LST_PRINT))
+SRC_PIRNT :=	$(addprefix $(DIR_SRC)/,$(LST_PRINT))
 OBJ_PRINT :=	$(addprefix $(DIR_OBJ)/,$(LST_PRINT:.c=.o))
 
 CONV	:=	ft_atoi.c\
 			ft_itoa.c
 LST_CONV :=	$(addprefix $(DIR_CONV)/,$(CONV))
-SRC_CONV :=	$(addprefix $(DIR_SRC)/, $(LST_CONV))
+SRC_CONV :=	$(addprefix $(DIR_SRC)/,$(LST_CONV))
 OBJ_CONV :=	$(addprefix $(DIR_OBJ)/,$(LST_CONV:.c=.o))
 # **************************************************************************** #
 LST_INCS :=	libft.h
