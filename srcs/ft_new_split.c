@@ -6,11 +6,11 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 01:01:52 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/30 01:17:04 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static int	count_word(char *line, char c);
 static char	**ft_split_error(char **ret, int i);
@@ -39,7 +39,7 @@ char	**ft_split_quotes(char *line, char c)
 	{
 		ret[i] = get_word(line, c);
 		if (!ret[i])
-			return (ft_split_error(ret, i));
+			return (ft_split_error(ret, i - 1));
 		line = line + ft_strlen(ret[i]);
 		ft_skip_quote(line);
 		i++;

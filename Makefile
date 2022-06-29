@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/30 01:01:36 by amiguez          ###   ########.fr        #
+#    Updated: 2022/06/30 01:16:07 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ LST_SRCS :=	ft_bzero.c\
 			ft_new_split.c\
 			ft_strchr.c\
 			ft_strdup.c\
+			ft_tabdup.c\
 			ft_striteri.c\
 			ft_strjoin.c\
 			ft_strlcat.c\
