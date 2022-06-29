@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 02:34:42 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 18:44:48 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/29 23:59:02 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strdup(const char *src)
  * 
  * @param str the string to duplicate.
  * @param size The number of bytes to duplicate.
- * @return char* of the malocated duplicated string.
+ * @return char* of the malocated duplicated string Or NULL if Malloc failed.
  */
 char	*ft_strndup(char *src, int size)
 {
