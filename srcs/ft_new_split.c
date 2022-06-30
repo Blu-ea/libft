@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 01:17:04 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/06/30 07:13:59 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	count_word(char *line, char c)
 	int		word;
 
 	word = 1;
-	while (line)
+	while (*line)
 	{
 		if (*line == c)
 		{
