@@ -1,2 +1,1 @@
-Better split
-strtrimc (same as strtrim but use c instade of ' ')
+strtrim_quote (same as strtrim but use c instade of ' ')
