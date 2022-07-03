@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/03 05:39:29 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/07/03 08:19:45 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	*get_word(char *line, char c)
 	char	*word;
 
 	i = 0;
-	while (line[i] != c)
+	while (line[i] != c && line[i])
 	{
 		if (line[i] == '\'' || line[i] == '\"')
 			i += ft_skip_quote(&line[i]);
