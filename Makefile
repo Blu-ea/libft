@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/06/30 01:16:07 by amiguez          ###   ########.fr        #
+#    Updated: 2022/07/03 05:42:52 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,7 +136,7 @@ endif
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c $(INCS) Makefile | $(DIR_OBJ)
 	$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
-	printf "$(ERASE)Compiling $(NAME) : $(BLUE) $<$(END)"
+	printf "$(ERASE)Compiling $(NAME) : $(BLUE) $< $(END)"
 
 $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)
