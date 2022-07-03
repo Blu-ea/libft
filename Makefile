@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/07/03 05:42:52 by amiguez          ###   ########.fr        #
+#    Updated: 2022/07/03 09:26:20 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ LST_SRCS :=	ft_bzero.c\
 			ft_substr.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			get_next_line.c
+			get_next_line.c\
+			ft_free.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 
 BOOL	:=	ft_isalnum.c\
@@ -131,7 +132,7 @@ $(NAME): $(OBJS)
 ifeq ($(NORMINETTE),$(NORMITEST))
 	printf "$(GREEN)Everything is ok\n$(END)"
 else
-	printf "$(RED)$(SUR)THERE IS AN ERROR WITH NORMINETTE IN LIBFT FILES !!$(END)\n"
+	printf "$(RED)$(SUR)THERE IS AN ERROR WITH NORMINETTE IN LIBFT FILES !!\n $(NORMINETTE)$(END)"
 endif
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c $(INCS) Makefile | $(DIR_OBJ)
@@ -157,8 +158,8 @@ fclean	: clean
 	printf "$(RED) /!\ $(END)Erasing libft.a$(RED) /!\ \n$(END)"
 re		: fclean all
 
-debug	:
-	$(OBJS)
+debug	: all
+	$(CC) $(NAME) -fsanitize=address main.c
 
 # /////////////////////////////////
 
