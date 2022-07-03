@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 07:13:59 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/07/03 05:39:29 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ char	**ft_split_quotes(char *line, char c)
 		ret[i] = get_word(line, c);
 		if (!ret[i])
 			return (ft_split_error(ret, i - 1));
-		line = line + ft_strlen(ret[i]);
-		ft_skip_quote(line);
+		line = line + ft_strlen(ret[i]) + 1;
 		i++;
 	}
 	return (ret);
@@ -65,7 +64,11 @@ static char	*get_word(char *line, char c)
 
 	i = 0;
 	while (line[i] != c)
+	{
+		if (line[i] == '\'' || line[i] == '\"')
+			i += ft_skip_quote(&line[i]);
 		i++;
+	}
 	word = ft_strndup(line, i);
 	return (word);
 }
@@ -79,13 +82,15 @@ static int	count_word(char *line, char c)
 	{
 		if (*line == c)
 		{
-			line = ft_skip_quote(line);
-			if (line)
+			while (*line == c && *line)
+				line++;
+			if (*line)
 				word++;
 		}
 		if (*line == '"' || *line == '\'')
-			ft_skip_quote(line);
-		line++;
+			line += ft_skip_quote(line);
+		if (*line)
+			line++;
 	}
 	return (word);
 }
@@ -94,17 +99,18 @@ static int	count_word(char *line, char c)
  * @brief Skip the content of a simple or double quotes.
  * 
  * @param line The pointer to the 1st simple/double quote
- * @return Return a pointer to the end of the quote or the end of the line.
+ * @return The numer of chars skipped
  */
-char	*ft_skip_quote(char *line)
+int	ft_skip_quote(char *line)
 {
 	char	c;
+	int		i;
 
 	c = *line;
-	line++;
-	while (*line || *line != c)
+	i = 1;
+	while (line[i] && line[i] != c)
 	{
-		line++;
+		i++;
 	}
-	return (line);
+	return (i);
 }

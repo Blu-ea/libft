@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 06:13:38 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/07/03 04:42:21 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strjoin_free(char *s1, char *s2, int fr);
 char	**ft_split(char const *s, char c);
 char	**ft_split_quotes(char *line, char c);
-char	*ft_skip_quote(char *line);
+int		ft_skip_quote(char *line);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
