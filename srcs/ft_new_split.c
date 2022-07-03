@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/03 10:52:24 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/07/03 11:33:35 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	**ft_split_quotes(char *line, char c)
 
 	i = 0;
 	word = count_word(line, c);
-	printf ("word = %d\n", word);
 	ret = malloc((word + 1) * sizeof(char *));
 	if (!ret)
 		return (NULL);
@@ -64,7 +63,6 @@ static char	*get_word(char *line, char c)
 	char	*word;
 
 	i = 0;
-	printf ("*line = %c\n", *line);
 	while (line[i] && line[i] == c)
 		line++;
 	while (line[i] != c && line[i])
