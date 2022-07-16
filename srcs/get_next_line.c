@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:31:06 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 19:11:12 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/07/16 14:39:39 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*ret_nl(char *ln, int i);
 char	*get_next_line(int fd)
 {
 	char		*line;
-	char static	stat[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	stat[OPEN_MAX][BUFFER_SIZE + 1];
 	char		temp[BUFFER_SIZE + 1];
 	int			i;
 
