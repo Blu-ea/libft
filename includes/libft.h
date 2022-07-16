@@ -24,6 +24,10 @@
 #  define BUFFER_SIZE 5
 # endif
 
+# ifndef OPEN_MAX
+#  define OPEN_MAX 160
+# endif
+
 # define FREE_S1 1
 # define FREE_S2 2
 # define FREE_BOTH 0
