@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:01:00 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 18:59:15 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/05 10:47:56 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (str1[i] - str2[i]);
 		i++;
 	}
-	if (i != n || (str1[i] == 0 || str2[i] == 0))
-		return (str1[i] - str2[i]);
-	return (0);
+	if (i == n)
+		return (0);
+	return (str1[i] - str2[i]);
 }
