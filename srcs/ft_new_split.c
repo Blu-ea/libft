@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:05:16 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/17 17:50:47 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/06 04:21:29 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_split_quotes(char *line, char c)
 	int		i;
 	int		word;
 
-	if (line == NULL)
+	if (!line || !*line)
 		return (NULL);
 	i = 0;
 	word = count_word(line, c);
