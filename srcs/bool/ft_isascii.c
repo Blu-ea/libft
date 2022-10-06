@@ -6,30 +6,25 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:52:15 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/06 05:57:50 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief return (1) if c is a ascii char, (0) otherwise
- * 
- * @param c the char to test
- * @return 0 or 1
+ * @brief return EXIT_SUCCESS if c is a ascii char, EXIT_FAILLURE otherwise
  */
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+		return (EXIT_SUCCESS);
+	return (EXIT_FAILURE);
 }
 
 /**
- * @brief return (1) if all the char in str are ascii, (0) otherwise
- * 
- * @param str 
- * @return int 
+ * @brief return EXIT_SUCCESS if all the char in str are ascii,
+ * EXIT_FAILLURE otherwise
  */
 int	ft_isall_ascii(char *str)
 {
@@ -38,9 +33,9 @@ int	ft_isall_ascii(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!ft_isascii(str[i]))
-			return (0);
+		if (ft_isascii(str[i]) == EXIT_FAILURE)
+			return (EXIT_FAILURE);
 		i++;
 	}
-	return (1);
+	return (EXIT_SUCCESS);
 }

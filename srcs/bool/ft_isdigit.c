@@ -6,31 +6,24 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:39:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/06 05:57:36 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief return 1 if c is a digit, 0 otherwise
- * 
- * @param c 
- * @return int 
+ * @brief return EXIT_SUCCESS if c is a digit, EXIT_FAILURE otherwise 
  */
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+		return (EXIT_SUCCESS);
+	return (EXIT_FAILURE);
 }
 
 /**
- * @brief return 0 if all digit, 1 if not
- * 
- * @param arg 
- * @return int 
+ * @brief return EXIT_SUCCESS if all digit, EXIT_FAILURE if not
  */
 int	ft_isall_digit(char *arg)
 {
@@ -39,9 +32,9 @@ int	ft_isall_digit(char *arg)
 	i = 0;
 	while (arg[i])
 	{
-		if (!ft_isdigit(arg[i]))
-			return (0);
+		if (ft_isdigit(arg[i]) == EXIT_FAILURE)
+			return (EXIT_FAILURE);
 		i++;
 	}
-	return (1);
+	return (EXIT_SUCCESS);
 }

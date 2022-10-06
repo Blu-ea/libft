@@ -6,30 +6,25 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 03:32:50 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 14:12:58 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/06 05:58:04 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief return (1) if c is a letter, (0) otherwise
- * 
- * @param c char to test
- * @return 1 or 0
+ * @brief return EXIT_SUCCESS if c is a letter, EXIT_FAILLURE otherwise
  */
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+		return (EXIT_SUCCESS);
+	return (EXIT_FAILURE);
 }
 
 /**
- * @brief retrun (1) if all the char in str are letter, (0) otherwise
- * 
- * @param arg string to test
- * @return 1 or 0
+ * @brief retrun EXIT_SUCCESS if all the char in str are letter,
+ * EXIT_FAILLURE otherwise
  */
 int	ft_isall_alpha(char *arg)
 {
@@ -38,9 +33,9 @@ int	ft_isall_alpha(char *arg)
 	i = 0;
 	while (arg[i])
 	{
-		if (!ft_isalpha(arg[i]))
-			return (0);
+		if (ft_isalpha(arg[i]) == EXIT_FAILURE)
+			return (EXIT_FAILURE);
 		i++;
 	}
-	return (1);
+	return (EXIT_SUCCESS);
 }
