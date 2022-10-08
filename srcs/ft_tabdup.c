@@ -6,13 +6,12 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 01:10:05 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/30 01:16:22 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/08 07:45:55 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_tablen(char **tab);
 static char	**ft_tabdup_error(char **ret, int i);
 
 /**
@@ -39,16 +38,6 @@ char	**ft_tabdup(char **tab)
 		i++;
 	}
 	return (ret);
-}
-
-static int	ft_tablen(char **tab)
-{
-	int		i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
 }
 
 static char	**ft_tabdup_error(char **ret, int i)

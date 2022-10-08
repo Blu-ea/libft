@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 23:31:37 by amiguez           #+#    #+#             */
-/*   Updated: 2022/10/06 04:37:57 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/08 08:01:38 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	**ft_split(char const *s, char c)
 	char	charset[2];
 
 	if (!s)
-		return (NULL); 
+		return (NULL);
 	charset[0] = c;
 	charset[1] = '\0';
 	i = 0;
-	size = ft_wordcount((char *)s,  charset);
+	size = ft_wordcount((char *)s, charset);
 	dest = malloc((size + 1) * sizeof(char *));
 	if (!dest)
 		return (0);
