@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 02:34:42 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/17 17:51:04 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/19 05:22:10 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,13 @@ char	*ft_strdup(const char *src)
 
 	if (!src)
 		return (NULL);
-	i = 0;
-	while (src[i])
-		i++;
-	ret = malloc(sizeof(char) * i + 1);
+	ret = malloc(sizeof(char) * ft_strlen(src) + 1);
 	if (!ret)
 		return (NULL);
-	ret[i] = '\0';
-	while (i--)
+	i = -1;
+	while (++i < ft_strlen(src))
 		ret[i] = src[i];
-	ret[0] = src[0];
+	ret[i] = '\0';
 	return (ret);
 }
 
