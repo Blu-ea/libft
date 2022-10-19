@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:55:08 by amiguez           #+#    #+#             */
-/*   Updated: 2022/10/06 05:58:27 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/19 03:54:41 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_isall_alphanum(char *arg)
 	i = 0;
 	while (arg[i])
 	{
-		if (ft_isalnum(arg[i]) == EXIT_FAILURE)
+		if (ft_isalphanum(arg[i]) == EXIT_FAILURE)
 			return (EXIT_FAILURE);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2022/10/08 08:00:17 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/19 03:55:23 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa(int n);
 
 void	*ft_calloc(size_t count, size_t size);
 
-int		ft_isalnum(int c);
+int		ft_isalphanum(int c);
 int		ft_isall_alphanum(char *arg);
 int		ft_isalpha(int c);
 int		ft_isall_alpha(char *arg);
