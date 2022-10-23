@@ -6,7 +6,7 @@
 #    By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 06:10:49 by amiguez           #+#    #+#              #
-#    Updated: 2022/07/03 09:26:20 by amiguez          ###   ########.fr        #
+#    Updated: 2022/10/23 10:18:17 by amiguez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ LST_SRCS :=	ft_bzero.c\
 			ft_tolower.c\
 			ft_toupper.c\
 			get_next_line.c\
+			ft_search.c\
 			ft_free.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 
@@ -159,7 +160,7 @@ fclean	: clean
 re		: fclean all
 
 debug	: all
-	$(CC) $(NAME) -fsanitize=address main.c
+	$(CC) main.c $(NAME)
 
 # /////////////////////////////////
 
