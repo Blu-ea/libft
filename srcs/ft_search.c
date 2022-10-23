@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 09:48:07 by amiguez           #+#    #+#             */
-/*   Updated: 2022/10/23 10:14:00 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/10/23 12:00:15 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
  * @param s String to search in
  * @param c Character to search for
  * @return a malloced string containing the first occurence of c in s
+ *	(Does not containe the recurence of c)
  */
-
 char	*ft_search(char *s, char c)
 {
 	int	i;
