@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 09:20:44 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/03 09:23:42 by amiguez          ###   ########.fr       */
+/*   Updated: 2022/11/22 21:16:16 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ void	ft_free_2d_array(char **array)
 	int	i;
 
 	i = 0;
+	if (!array)
+		return ;
 	while (array[i])
 	{
-		free(array[i]);
+		if (array[i])
+			free(array[i]);
 		i++;
 	}
 	free(array);
@@ -41,9 +44,12 @@ void	ft_free_2d_array_n(char **array, int n)
 	int	i;
 
 	i = 0;
+	if (!array)
+		return ;
 	while (i < n)
 	{
-		free(array[i]);
+		if (array[i])
+			free(array[i]);
 		i++;
 	}
 	free(array);
