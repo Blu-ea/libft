@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:44:55 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 19:08:33 by amiguez          ###   ########.fr       */
+/*   Updated: 2023/01/16 20:10:19 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,27 @@
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ret_str;
-	size_t	i;
-	size_t	mal_size;
+	char			*ret;
+	unsigned int	i;
+	size_t			len_malloc;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	if (start >= (unsigned int) ft_strlen(s))
 		return (ft_strdup(""));
+	len_malloc = ft_strlen(s + start);
+	if (len_malloc >= len)
+		len_malloc = len;
+	ret = malloc((len_malloc + 1) * sizeof(*ret));
+	if (!ret)
+		return (0);
 	i = 0;
-	if ((size_t)ft_strlen(s) < len)
-		mal_size = ft_strlen(s);
-	else
-		mal_size = len;
-	ret_str = malloc (sizeof (char) * mal_size + 1);
-	if (!ret_str)
-		return (NULL);
-	ret_str[mal_size] = '\0';
-	while (i < mal_size && s[start])
+	while (len && s[start + i])
 	{
-		ret_str[i] = s[start];
-		start++;
+		ret[i] = s[start + i];
 		i++;
+		len--;
 	}
-	return (ret_str);
+	ret[i] = 0;
+	return (ret);
 }
