@@ -23,7 +23,6 @@ int	ft_strlen(char const *s)
 	tmp = (char *) s;
 	if (!tmp)
 		return (0);
-
 	i = 0;
 	while (s[i])
 		i++;
