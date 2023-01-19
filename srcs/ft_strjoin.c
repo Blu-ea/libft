@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:57:32 by amiguez           #+#    #+#             */
-/*   Updated: 2022/06/25 18:52:19 by amiguez          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:59:37 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ char	*ft_strjoin_free(char *s1, char *s2, int fr)
 	char	*s_ret;
 
 	s_ret = ft_strjoin(s1, s2);
-	if (fr != FREE_S2)
+	if (fr != FREE_S2 && s1)
 		free(s1);
-	if (fr != FREE_S1)
+	if (fr != FREE_S1 && s2)
 		free(s2);
 	return (s_ret);
 }
