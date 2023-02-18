@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:31:06 by amiguez           #+#    #+#             */
-/*   Updated: 2022/07/16 14:39:39 by amiguez          ###   ########.fr       */
+/*   Updated: 2023/02/18 02:48:37 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	chek_nl(char *line);
 static void	set_nl(char *line, char *stat);
 static char	*ret_nl(char *ln, int i);
+char		*gnl_join(char *s1, char *s2);
 
 /**
  * @brief Read a line from a file descriptor.
@@ -44,11 +45,18 @@ char	*get_next_line(int fd)
 		if (i <= 0)
 			return (ret_nl(line, i));
 		temp[i] = '\0';
-		line = ft_strjoin(line, temp);
+		line = ft_strjoin_free(line, temp, FREE_S1);
 	}
 	if (chek_nl(line) != -1)
 		set_nl(line, (char *)stat[fd]);
 	return (line);
+}
+
+char	*gnl_join(char *s1, char *s2)
+{
+	if (!s1)
+		return (ft_strdup(s2));
+	return (ft_strjoin_free(s1, s2, FREE_S1));
 }
 
 static int	chek_nl(char *line)
