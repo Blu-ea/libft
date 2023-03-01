@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:41:40 by amiguez           #+#    #+#             */
-/*   Updated: 2023/03/01 09:24:40 by amiguez          ###   ########.fr       */
+/*   Updated: 2023/03/01 09:55:55 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <limits.h> // OPEN_MAX
 # include <stdarg.h>
 # include <stdio.h>
-# include <stddef.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
