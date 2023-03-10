@@ -6,7 +6,7 @@
 /*   By: amiguez <amiguez@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 02:34:42 by amiguez           #+#    #+#             */
-/*   Updated: 2022/10/19 05:22:10 by amiguez          ###   ########.fr       */
+/*   Updated: 2023/03/10 14:02:52 by amiguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ char	*ft_strndup(char *src, int size)
 	ret[i] = '\0';
 	while (i--)
 		ret[i] = src[i];
-	ret[0] = src[0];
 	return (ret);
 }
