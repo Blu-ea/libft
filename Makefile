@@ -45,7 +45,8 @@ LST_SRCS :=	ft_bzero.c\
 			ft_toupper.c\
 			get_next_line.c\
 			ft_search.c\
-			ft_free.c
+			ft_free.c\
+			ft_digitlen.c
 LST_OBJS :=	$(LST_SRCS:.c=.o)
 
 BOOL	:=	ft_isalnum.c\
