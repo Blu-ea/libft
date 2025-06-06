@@ -55,7 +55,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
  * @return an integer greater than, equal to, or less than 0, according to the
  * relationship between the strings. (str1[i] - str2[i])
  */
-int ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned long int	i;
 
@@ -73,4 +73,63 @@ int ft_strcmp(const char *s1, const char *s2)
 		i++;
 	}
 	return (s1[i] - s2[i]);
+}
+
+
+/**
+ * @brief Compare two strings. until one is finished. This function is case insensitive.
+ *
+ * @param s1 The first string to compare.
+ * @param s2 The second string to compare.
+ * @return an integer greater than, equal to, or less than 0, according to the
+ * relationship between the strings. (str1[i] - str2[i])
+ */
+int	ft_stricmp(const char *s1, const char *s2)
+{
+	unsigned long int	i;
+
+	if (!s1 && !s2)
+		return (0);
+	if (!s1)
+		return (-*s2);
+	if (!s2)
+		return (*s1);
+	i = 0;
+	while (s1[i] != 0 && s2[i] != 0)
+	{
+		if (ft_tolower(s1[i]) != ft_tolower(s2[i]))
+			return (ft_tolower(s1[i]) - ft_tolower(s2[i]));
+		i++;
+	}
+	return (ft_tolower(s1[i]) - ft_tolower(s2[i]));
+}
+
+int	ft_stracmp(const char *s1, const char *s2)
+{
+	unsigned long int	i;
+	unsigned long int	j;
+
+	if (!s1 && !s2)
+		return (0);
+	if (!s1)
+		return (-*s2);
+	if (!s2)
+		return (*s1);
+	i = 0;
+	j = 0;
+	while (s1[i] != 0 && s2[j] != 0)
+	{
+		if (ft_isalpha(s1[i]) && ft_isdigit(s2[j]))
+		{
+			if (ft_tolower(s1[i]) != ft_tolower(s2[j]))
+				return (ft_tolower(s1[i]) - ft_tolower(s2[j]));
+			i++;
+			j++;
+		}
+		else if (!ft_isalpha(s1[i]))
+			i++;
+		else if (!ft_isalpha(s2[j]))
+			j++;
+	}
+	return (ft_tolower(s1[i]) - ft_tolower(s2[j]));
 }
